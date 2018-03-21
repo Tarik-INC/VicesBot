@@ -7,8 +7,9 @@ Um bot multitarefas para o telegram, modelado e utilizado pelo laboratório lice
 - Requistar o preço do bitcoin utilizando a API do site [CoinMarket](coinmarketcap.com).
 
 ## **O que falta fazer**
-
+- Criar sistema de busca de preço que permita mais conversões entre diferentes moedas
 - Criar alerta para variações do btc
+- Amplificar sistemas de alerta para várias criptomoedas
 - Postar imagens( memes de preferência) 
 - Modificar sistema de resposta
 - Adicionar mais funcionalidades ( a discutir)
