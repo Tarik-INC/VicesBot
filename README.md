@@ -1,6 +1,6 @@
 # VicesaBot
 
-Um bot para telegram multitarefas, modelado e utilizado pelo laboratório licesa localizado no Departamento de Ciência da Computação@UFLA. O projeto foi beaseado na API [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).
+Um bot multitarefas para o telegram, modelado e utilizado pelo laboratório licesa localizado no Departamento de Ciência da Computação@UFLA. O projeto foi beaseado na API [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).
 
 ## **O que foi feito** 
 - Falar
