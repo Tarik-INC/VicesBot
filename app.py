@@ -6,9 +6,10 @@ Token = ""
 
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from btc_price.btc_price import get_btc_price
+from email.send_email import build_email
 import logging
 import random
-from btc_price.btc_price import get_btc_price
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -32,17 +33,18 @@ def falar(bot, update):
     dialogo = ["Vocês querem café?", "Não entendi", "Petrini explica para min isso daqui",
                "Tomei pau denovo", " (assobio)", "O que que foi fi?",
                "Esse tarique tem que deixar de ser vagabundo", "Café está pronto", "Comprou minha placa de video?"]
+
     bot.send_message(chat_id=update.message.chat_id,
                      text=random.choice(dialogo))
 
 
 def help(bot, update):
-
+    pass
 
 
 def echo(bot, update):
     
-    update.message.reply_text(update.message.text)
+    update.message.reply_text(f"Nao entendi o que vc quis dizer com {update.message.text}")
 
 
 def error(bot, update, error):
@@ -52,8 +54,19 @@ def error(bot, update, error):
 
 def btc(bot, update):
     price = get_btc_price(convert="BRL", limit=10)
-    message = f"Colé olha o preço ae:\n{price}\nDaora né? "
+    message = f"Colé olha o preço ae \n{price}\nDaora né? "
     update.message.reply_text(message)
+
+def send_email(bot, update):
+    
+    bot.send_message(chat_id = update.message.chat_id, text = "Enviando mensagem...")
+    try:
+        send_email(subject = "", sender = "", body = "", passw = "" )
+    except:
+            bot.send_message(chat_id=update.message.chat_id,
+                             text="Houve um problema ao tentar enviar as mesagens, aguarde a assistência técnica")
+
+    bot.send_message(chat_id = update.message.chat_id, text = "Mensagem enviada para todos os emails com sucesso!")
 
 
 def main():
@@ -67,6 +80,7 @@ def main():
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("falar", falar))
     dp.add_handler(CommandHandler("btc", btc))
+    dp.add_handler(CommandHandler("cafepronto"), send_email)
    
     dp.add_handler(MessageHandler(Filters.text, echo))
 
