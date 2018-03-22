@@ -4,7 +4,8 @@ from email.mime.multipart import MIMEMultipart
 from check_email import check_email
 from datetime import datetime
 
-def build_email(**kwargs): 
+
+def build_send_email(**kwargs):
 
     msg = MIMEMultipart()
     msg['Subject'] = kwargs['subject']
@@ -16,12 +17,12 @@ def build_email(**kwargs):
         check_email()
         receiver.append(email)
 
-    email_adds.close()     
+    email_adds.close()
 
     msg['From'] = kwargs['sender']
     msg['To'] = ', '.join(destination)
     date = datetime.now()
-    msg.preamble = f"Agora são [{date.hour} - {date.minutes}]\n\n"
+    msg.preamble = f"Agora são [{date.hour} - {date.minutes}] e o seu amigo {kwargs['user']} está avisando: \n\n"
    # body = "O café esta pronto!  Corre, se não vai acabar"
     msg.attach(MIMEtext(kwargs["body"], 'plain'))
 
