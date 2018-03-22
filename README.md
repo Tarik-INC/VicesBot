@@ -2,7 +2,7 @@
 
 Um bot multitarefas para o telegram, modelado e utilizado pelo laboratório licesa localizado no Departamento de Ciência da Computação@UFLA. O projeto foi beaseado na API [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).
 
-## **TO DO LIST** 
+## **To do list** 
 - Criar sistema de busca de preço que permita mais conversões de btc para diferentes moedas
 - Criar alerta para variações do btc
 - Amplificar sistemas de alerta e busca para várias criptomoedas
