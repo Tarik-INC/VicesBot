@@ -11,7 +11,7 @@ def get_btc_price(**kwargs):
 
     data = r.json()
 
-    result = f"{data[0]['symbol']} price: 1 BTC ={float(data[0]['price_brl']):0.2f} BRL "
+    result = f"{data[0]['symbol']} price: 1 BTC = {float(data[0]['price_brl']):0.2f} BRL "
 
     return result
  
