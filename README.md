@@ -8,7 +8,8 @@ Um bot multitarefas para o telegram, modelado e utilizado pelo laboratório lice
 - Amplificar sistemas de alerta e busca para várias criptomoedas
 - Postar imagens( memes de preferência) 
 - Modificar sistema de resposta
-- Criar sistema de envio automático de emails
+- ~~Criar sistema de envio automático de emails~~
+- Aprimorar sistema de envio automático, permitindo e-mails customizados
 - Adicionar mais funcionalidades ( a discutir)
 
 ## **Como utilizar**
